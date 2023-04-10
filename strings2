@@ -1,0 +1,17 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	fmt.Print("Digite alguma coisa: ")
+	var input string
+	fmt.Scanln(&input)
+
+	output := strings.ReplaceAll(input, " ", "")
+
+	// Exibe o resultado na tela
+	fmt.Println("Sua frase sem espaços em branco é:", output)
+}

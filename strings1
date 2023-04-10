@@ -1,0 +1,16 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	fmt.Print("Digite alguma coisa: ")
+	var input string
+	fmt.Scanln(&input)
+
+	output := strings.ToUpper(input)
+
+	fmt.Println("Sua frase com letras maiúsculas fica:", output)
+}

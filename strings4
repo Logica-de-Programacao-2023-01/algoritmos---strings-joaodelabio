@@ -1,0 +1,19 @@
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Print("digite a primeira string: ")
+	var string1 string
+	fmt.Scanln(&string1)
+
+	fmt.Print("digite a segunda string: ")
+	var string2 string
+	fmt.Scanln(&string2)
+
+	if string1 == string2 {
+		fmt.Println("as strings são iguais.")
+	} else {
+		fmt.Println("as strings são diferentes.")
+	}
+}
