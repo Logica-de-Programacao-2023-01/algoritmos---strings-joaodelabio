@@ -1,0 +1,37 @@
+package main
+
+import (
+	"fmt"
+	"strconv"
+)
+
+func main() {
+	var input string
+	fmt.Print("Digite uma string: ")
+	fmt.Scanln(&input)
+
+	isIncreasing := checkIncreasingSequence(input)
+	if isIncreasing {
+		fmt.Println("A string é uma sequência numérica crescente.")
+	} else {
+		fmt.Println("A string não é uma sequência numérica crescente.")
+	}
+}
+
+func checkIncreasingSequence(str string) bool {
+	length := len(str)
+	if length <= 1 {
+		return false
+	}
+
+	for i := 0; i < length-1; i++ {
+		currDigit, err1 := strconv.Atoi(string(str[i]))
+		nextDigit, err2 := strconv.Atoi(string(str[i+1]))
+
+		if err1 != nil || err2 != nil || currDigit >= nextDigit {
+			return false
+		}
+	}
+
+	return true
+}
