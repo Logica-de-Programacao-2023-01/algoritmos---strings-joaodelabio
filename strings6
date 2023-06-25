@@ -1,0 +1,20 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func countWords(str string) int {
+	words := strings.Fields(str)
+	return len(words)
+}
+
+func main() {
+	var input string
+	fmt.Print("Digite uma frase: ")
+	fmt.Scanln(&input)
+
+	numWords := countWords(input)
+	fmt.Printf("A frase contém %d palavra(s).\n", numWords)
+}
