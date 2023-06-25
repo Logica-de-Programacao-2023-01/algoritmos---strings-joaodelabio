@@ -1,0 +1,27 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	var input string
+	fmt.Print("Digite uma string: ")
+	fmt.Scanln(&input)
+
+	newString := replaceVowels(input)
+	fmt.Println("Nova string:", newString)
+}
+
+func replaceVowels(str string) string {
+	vowels := "aeiouAEIOU"
+	replaceChar := '*'
+
+	// Substituir as vogais pela substituta
+	for _, vowel := range vowels {
+		str = strings.ReplaceAll(str, string(vowel), string(replaceChar))
+	}
+
+	return str
+}
