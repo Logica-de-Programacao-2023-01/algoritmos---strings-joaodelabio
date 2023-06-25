@@ -1,0 +1,30 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	var str, pattern string
+	fmt.Print("Digite uma string: ")
+	fmt.Scanln(&str)
+	fmt.Print("Digite o padrão: ")
+	fmt.Scanln(&pattern)
+
+	indices := findPatternIndices(str, pattern)
+	fmt.Println("Índices em que o padrão ocorre:", indices)
+}
+
+func findPatternIndices(str, pattern string) []int {
+	var indices []int
+
+	// Buscar o padrão na string
+	for i := 0; i <= len(str)-len(pattern); i++ {
+		if strings.HasPrefix(str[i:], pattern) {
+			indices = append(indices, i)
+		}
+	}
+
+	return indices
+}
